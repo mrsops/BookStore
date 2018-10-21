@@ -29,7 +29,7 @@ public class BookstoreProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException, TransformerException {
-        Scanner teclado = new Scanner(System.in);
+        Scanner tc = new Scanner(System.in);
         ControlDom ctrlDoc = new ControlDom();
         Constantes cons = new Constantes();
         ControlBookstore cb = new ControlBookstore();
@@ -38,15 +38,15 @@ public class BookstoreProject {
         Bookstore bs = null;
         Bookstore bs2 = null;
         int opcion = 999;
-        String ruta = "", rutaAlmacenarXml = null;
+        String ruta = "", rutaAlmacenarXml = "";
         while (opcion != 0) {
             mostrarMenu();
-            opcion = teclado.nextInt();
-            teclado.nextLine();
+            opcion = tc.nextInt();
+            tc.nextLine();
             switch (opcion) {
                 case 1: //Seleccionar fichero XML
                     System.out.print("Introduce la ruta del bookstore a leer (En blanco para bookstore por defecto): ");
-                    ruta = teclado.nextLine();
+                    ruta = tc.nextLine();
                     if (ruta != "") {
                         doc = ctrlDoc.deXMLaDOM( new File("Bookstores/bookstore.xml"));
                     } else {
@@ -69,15 +69,21 @@ public class BookstoreProject {
                     docNuevo = ctrlDoc.instanciarDocumento();
                     Element raiz = docNuevo.createElement("bookstore");
                     docNuevo.appendChild(raiz);
-                    System.out.println("Mi raiz es  " + docNuevo.getDocumentElement().getTagName());
+                    System.out.println("Se ha añadido de elemento raiz al documento: " + docNuevo.getDocumentElement().getTagName());
                     cb.escribirBookstore(docNuevo, bs2, raiz);
-                    System.out.println("DOM GENERADO CON EXITO");
+                    System.out.println("Se ha generado el dom satisfactoriamente");
                     break;
                 case 6: //Seleccionar el nombre del fichero donde almacenarlo
-                    rutaAlmacenarXml = teclado.nextLine();
+                    System.out.print("Nombre del fichero (En blanco para defaultBookstore.xml): ");
+                    rutaAlmacenarXml = tc.nextLine();
                     break;
                 case 7: //Guardar el documento a xml
-                    ctrlDoc.deDOMaXML(docNuevo, new File(rutaAlmacenarXml));
+                    if(!rutaAlmacenarXml.equals("")){
+                        ctrlDoc.deDOMaXML(docNuevo, new File("Bookstores/"+rutaAlmacenarXml+".xml"));
+                    }else{
+                        ctrlDoc.deDOMaXML(docNuevo, new File("Bookstores/defaultBookstore.xml"));
+                    }
+                    
                     break;
             }
         }
