@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookstore>
+<book category="Fantasia" cover="Hardcover">
+<title>PruebaTitulo</title>
+<autores>
+<author>Carlos Molina</author>
+<author>Yo no</author>
+<author>Autorin el Autorero</author>
+</autores>
+<year>2018</year>
+<price>10.15</price>
+</book>
+<book category="Fantasia" cover="Hardcover">
+<title>PruebaTitulo</title>
+<autores>
+<author>Carlos Molina</author>
+<author>Yo no</author>
+<author>Autorin el Autorero</author>
+</autores>
+<year>2018</year>
+<price>10.15</price>
+</book>
+<book category="Fantasia" cover="Hardcover">
+<title>PruebaTitulo</title>
+<autores>
+<author>Carlos Molina</author>
+<author>Yo no</author>
+<author>Autorin el Autorero</author>
+</autores>
+<year>2018</year>
+<price>10.15</price>
+</book>
+<book category="Cat Inventada" cover="No se sae">
+<title>Prueba de titulo2</title>
+<autores>
+<author>Yo segur que no</author>
+</autores>
+<year>2017</year>
+<price>200 Euros</price>
+</book>
+</bookstore>

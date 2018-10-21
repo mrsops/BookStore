@@ -24,21 +24,21 @@ public class Constantes {
     public Constantes() {
     }
 
-    public Bookstore altaBookStore(Bookstore bs) {
-        Autor aut=new Autor("Samuel L. Jackson");
-        Book libro1 = new Book("casero", "justinbiebier", "Justin Bieber y Michael Jackson unidos por el amor", "1999", "599");
-        libro1.getAutores().add(aut);
+    public void altaLibrosDefault(Bookstore bs) {
+        Book book = new Book("Fiction YA", "hardcover", "The power of Six", "2011", "28.69");
+        book.getAutores().add(new Autor("James Frey"));
+        book.getAutores().add(new Autor("Jobie Hughes"));
         
-        Book libro2 = new Book("web", "cover1", "Michael Jackson jugando con los niños ", "2999", "199");
-        libro2.getAutores().add(new Autor("BurguerCangreBurger"));
-        libro2.getAutores().add(new Autor("CurguerBangreCurger"));
-        libro2.getAutores().add(aut);
-        Book libro3 = new Book("educacional", "cover2", "Como hackear el algoritmo de Google Adsense y no morir en el intento", "999", "59");
-        libro3.getAutores().add(new Autor("Yea boi"));
-        bs.add(libro1);
-        bs.add(libro2);
-        bs.add(libro3);
-        return bs;
+        Book book2 = new Book("Childrens", "paperback", "Hunger Games: Catching Fire", "2013", "17.10");
+        book2.getAutores().add(new Autor("Suzanne Collins"));
+        
+        Book book3 = new Book("Fiction YA", "hardcover", "Eldest", "2005", "16.15");
+        book3.getAutores().add(new Autor("Cristopher Paolini"));
+
+        
+        bs.add(book);
+        bs.add(book2);
+        bs.add(book3);
     }
 
 }

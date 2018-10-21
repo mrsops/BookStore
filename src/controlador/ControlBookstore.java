@@ -25,7 +25,7 @@ import org.xml.sax.SAXException;
 public class ControlBookstore extends ControlDom {
 
     ArrayList<Book> listaLibros;
-    Bookstore bs;
+    Bookstore bStore;
 
     public Document recuperar(File xmlFile) throws ParserConfigurationException, SAXException, IOException {
         Document doc = null;
@@ -39,22 +39,22 @@ public class ControlBookstore extends ControlDom {
 
     public Bookstore leerBookstore(Document doc) {
         Element raiz = doc.getDocumentElement();
-        NodeList listaLibros = raiz.getChildNodes();
-        Bookstore bs = new Bookstore();
+        NodeList listaDeLibros = raiz.getChildNodes();
+        Bookstore bookStore = new Bookstore();
         ControlBook cb = new ControlBook();
-        for (int i = 0; i < listaLibros.getLength(); i++) {
-            if (listaLibros.item(i).getNodeType() == Node.ELEMENT_NODE) {
-                Book b = cb.leerBook(doc, (Element) listaLibros.item(i));
+        for (int i = 0; i < listaDeLibros.getLength(); i++) {
+            if (listaDeLibros.item(i).getNodeType() == Node.ELEMENT_NODE) {
+                Book b = cb.leerBook(doc, (Element) listaDeLibros.item(i));
                 System.out.println("Leido book " + b.toString());
-                bs.add(b);
+                bookStore.add(b);
             }
         }
-        System.out.println("Se devuelve bookstore con " + bs.size() + " libros");
-        return bs;
+        System.out.println("Se devuelve bookstore con " + bookStore.size() + " libros");
+        return bookStore;
     }
 
     public Document escribirBookstore(Document doc, Bookstore bs, Element raiz) {
-        ControlBook cb = new ControlBook();
+        ControlBook cBook = new ControlBook();
         for (int i = 0; i < bs.size(); i++) {
             Element etiquetaBook = doc.createElement("book");
             raiz.appendChild(etiquetaBook);
@@ -62,7 +62,7 @@ public class ControlBookstore extends ControlDom {
             if (bs.get(i).getCover() != "") {
                 etiquetaBook.setAttribute("cover", bs.get(i).getCover());
             }
-            cb.escribirBook(doc, etiquetaBook, bs.get(i));
+            cBook.escribirBook(doc, etiquetaBook, bs.get(i));
         }
         return doc;
     }

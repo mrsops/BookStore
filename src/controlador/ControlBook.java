@@ -31,9 +31,7 @@ public class ControlBook extends ControlDom {
         libro.setTitulo(getValorEtiqueta(cons.ET_TITULO, book));
 
         Element eAutores = getElementEtiqueta(cons.ET_AUTORES, book);
-        System.out.println("Le paso la etiqueta " + eAutores.getNodeName() + " con " + eAutores.getChildNodes().getLength());
         libro.setAutores(leerAutores(eAutores));
-
         libro.setCategoria(book.getAttribute("category"));
         libro.setCover(book.getAttribute("cover"));
         return libro;
@@ -61,15 +59,14 @@ public class ControlBook extends ControlDom {
 
     public ArrayList<Autor> leerAutores(Element eAutores) {
         Constantes cons = new Constantes();
-        ArrayList<Autor> listaAutoresArray = new ArrayList<>();
-
-        NodeList listaAutores = eAutores.getElementsByTagName(cons.ET_AUTOR);
-        for (int i = 0; i < listaAutores.getLength(); i++) {
-            Autor autor = new Autor(listaAutores.item(i).getTextContent());
-            //System.out.println("Leo autor "+autor.toString());
-            listaAutoresArray.add(autor);
+        ArrayList<Autor> autores = new ArrayList<>();
+        Element pruba;
+        NodeList nodeListAutores = eAutores.getElementsByTagName(cons.ET_AUTOR);
+        for (int i = 0; i < nodeListAutores.getLength(); i++) {
+            Autor autor = new Autor(nodeListAutores.item(i).getTextContent());
+            autores.add(autor);
         }
-        return listaAutoresArray;
+        return autores;
     }
 
     public void escribirAutores(Document doc, Element eAutores, Book b) {

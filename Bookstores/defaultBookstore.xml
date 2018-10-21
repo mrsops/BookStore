@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bookstore>
+<book category="Fiction YA" cover="hardcover">
+<title>The power of Six</title>
+<autores>
+<author>James Frey</author>
+<author>Jobie Hughes</author>
+</autores>
+<year>2011</year>
+<price>28.69</price>
+</book>
+<book category="Childrens" cover="paperback">
+<title>Hunger Games: Catching Fire</title>
+<autores>
+<author>Suzanne Collins</author>
+</autores>
+<year>2013</year>
+<price>17.10</price>
+</book>
+<book category="Fiction YA" cover="hardcover">
+<title>Eldest</title>
+<autores>
+<author>Cristopher Paolini</author>
+</autores>
+<year>2005</year>
+<price>16.15</price>
+</book>
+</bookstore>
