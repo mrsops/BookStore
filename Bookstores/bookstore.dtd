@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT bookstore (book)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT book (title|autores|year|price)*>
+<!ATTLIST book
+    category CDATA #IMPLIED
+    cover CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title
+    lang CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT autores (author+)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT author (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT year (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT price (#PCDATA)>

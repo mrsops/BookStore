@@ -85,12 +85,13 @@ public class BookstoreProject {
     }
 
     public static void mostrarMenu() { //TODO PARA CAMBIAR TEXTOS
-        System.out.println("1.-Seleccionar un fichero xml a recuperar y crea un document");
-        System.out.println("2.-Lee del documento y crea un objeto BookStore");
-        System.out.println("3.-Mostrar objeto BookStore");
-        System.out.println("4.-Crear un objeto BookStore y añadir libros de ejemplo");
-        System.out.println("5.-Escribir el objeto bookstore creado en un documento nuevo");
-        System.out.println("6.-Introduce ruta final del fichero");
-        System.out.println("7.-GUARDAR");
+        System.out.println("1. Seleccionar fichero xml para nuevo documento");
+        System.out.println("2. Leer documento y crear objeto Bookstore a partir de el");
+        System.out.println("3.-Mostrar el BookStore");
+        System.out.println("4.-Crear nuevo Bookstore, y añadir libros en el");
+        System.out.println("5.-Escribir el bookstore a documento");
+        System.out.println("6.-Introducir ruta destino del archivo xml (Solo nombre sin extension)");
+        System.out.println("7.-Guardar el documento a XML");
+        System.out.println("0. Salir");
     }
 }
