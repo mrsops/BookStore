@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE BOOKSTORE SYSTEM "bookstore.dtd">
+<bookstore>
+    <book category="fiction YA">
+        <title lang="en">I am number 4</title>
+	<autores>
+        	<author>James Frey</author>
+                <author>Jobie hughes</author>
+	</autores>
+        <year>2005</year>
+        <price>15.99</price>
+    </book>
+    <book category="fantasy">
+        <title lang="en">The name of wind</title>
+	<autores>
+		<author>Patrick Rothfus</author>
+	</autores>
+	<year>2007</year>
+	<price>13.99</price>
+    </book>
+    <book category="cooking">
+        <title lang="en">Half-Blood</title>
+	<autores>
+        	<author>Jennifer L. Amentrout</author>
+	</autores>
+        <year>2011</year>
+        <price>8.99</price>
+    </book>
+    <book category="web" cover="paperback">
+        <title lang="en">Learning XML</title>
+	<autores>
+        	<author>Erik T. Ray</author>
+	</autores>
+        <year>2003</year>
+        <price>39.95</price>
+    </book>
+</bookstore>
+
