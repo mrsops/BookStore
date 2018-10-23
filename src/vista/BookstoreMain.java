@@ -31,6 +31,7 @@ public class BookstoreMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException, TransformerException {
+        limpiar();
         Scanner tc = new Scanner(System.in);
         ControlDom ctrlDoc = new ControlDom();
         Constantes cons = new Constantes();
@@ -53,7 +54,12 @@ public class BookstoreMain {
                     if (ruta.equals("")) {
                         doc = ctrlDoc.deXMLaDOM(new File("Bookstores/bookstore.xml"));
                     } else {
-                        doc = ctrlDoc.deXMLaDOM(new File(ruta));
+                        if(ruta.endsWith(".xml")){
+                           doc = ctrlDoc.deXMLaDOM(new File("Bookstores/"+ruta)); 
+                        }else{
+                            doc = ctrlDoc.deXMLaDOM(new File("Bookstores/"+ruta+".xml"));
+                        }
+                        
                     }
                     docCreado=true;
                     break;
@@ -140,7 +146,7 @@ public class BookstoreMain {
 
                     break;
                 case "0":
-                    System.out.println("Finalizando programa");
+                    System.out.println("Finalizando programa...");
                     break;
 
                 default:
@@ -160,5 +166,11 @@ public class BookstoreMain {
         System.out.println("6.-Introducir ruta destino del archivo xml (Solo nombre sin extension)");
         System.out.println("7.-Guardar el documento a XML");
         System.out.println("0. Salir");
+    }
+    
+    public static void limpiar(){
+        for (int i = 0; i < 50; i++) {
+            System.out.println("");
+        }
     }
 }

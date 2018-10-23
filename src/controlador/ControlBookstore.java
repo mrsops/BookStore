@@ -53,7 +53,7 @@ public class ControlBookstore extends ControlDom {
         return bookStore;
     }
 
-    public Document escribirBookstore(Document doc, Bookstore bs, Element raiz) {
+    public void escribirBookstore(Document doc, Bookstore bs, Element raiz) {
         ControlBook cBook = new ControlBook();
         for (int i = 0; i < bs.size(); i++) {
             Element etiquetaBook = doc.createElement("book");
@@ -64,7 +64,6 @@ public class ControlBookstore extends ControlDom {
             }
             cBook.escribirBook(doc, etiquetaBook, bs.get(i));
         }
-        return doc;
     }
 
 }
